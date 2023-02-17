@@ -31,8 +31,12 @@ const Product = (sequelize) => {
             defaultValue: 5.0,
         },
         count: {
-                type: DataTypes.INTEGER,
-                defaultValue: 1,
+            type: DataTypes.INTEGER,
+            defaultValue: 1,
+        },
+        deleted: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         }
     },
     {
