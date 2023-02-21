@@ -26,6 +26,9 @@ const Product = (sequelize) => {
             type: DataTypes.DECIMAL(6, 2), // hasta un maximo de 9999.99
             //allowNull: false
         },
+        type: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+        },
         rating: {
             type: DataTypes.DECIMAL(3, 2),
             defaultValue: 5.0,
