@@ -1,11 +1,10 @@
-const { where } = require("sequelize");
 const { Reviews } = require("../../db.js");
 const { Product } = require("../../db.js");
 
 const postReviews = async (req, res) => {
     const { puntuation, ProductId, UserId } = req.body;
     try {
-        const newReviews = await Reviews.create({ puntuation, ProductId, UserId });
+        await Reviews.create({ puntuation, ProductId, UserId });
         let reviewProduct = await Product.findByPk(ProductId);
         let prevRating = reviewProduct.rating;
         let prevCount = reviewProduct.count;
