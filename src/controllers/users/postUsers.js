@@ -1,4 +1,5 @@
-const { Users } = require('../../db.js')
+const { Users } = require('../../db.js');
+const { newUser } = require('../email/emailCreate.js');
 
 
 const postUsers = async (req, res) => {
@@ -8,6 +9,7 @@ const postUsers = async (req, res) => {
         if(!name || !email) return res.send({ message: "data required" });
         if (userFind.length) return res.send({ message: "User already exists" });
         await Users.create({ name, email, contact, token });
+        await newUser(name, email);
         res.send({ message: 'User created successfully'});
     } catch (error) {
         res.send({ message: error.message });
