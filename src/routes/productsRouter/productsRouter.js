@@ -15,5 +15,7 @@ productsRouter.post('/', postProducts);
 
 // DELETE
 productsRouter.delete('/:id', deleteProduct);
+productsRouter.delete('/carrito/:id', agregarCarrito);
+
 
 module.exports = productsRouter;
