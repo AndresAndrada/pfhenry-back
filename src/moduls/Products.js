@@ -29,6 +29,10 @@ const Product = (sequelize) => {
         type: {
             type: DataTypes.ARRAY(DataTypes.STRING),
         },
+        carrito: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
         rating: {
             type: DataTypes.DECIMAL(3, 2),
             defaultValue: 5.0,

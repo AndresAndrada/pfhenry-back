@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const Product = require('./moduls/Products.js');
+const Reviews = require('./moduls/Reviews.js');
 const Types = require('./moduls/Types.js');
 const Users = require('./moduls/Users.js');
 
@@ -23,6 +24,7 @@ const sequelize = new Sequelize(DB_DEPLOY, {
 Users(sequelize);
 Product(sequelize);
 Types(sequelize);
+Reviews(sequelize);
 
 // console.log(sequelize.models, 'MODELOS db');
 

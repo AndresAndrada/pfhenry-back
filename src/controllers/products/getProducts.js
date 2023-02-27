@@ -6,13 +6,14 @@ ORDER_BY = {
     max_price : ['price','DESC'],
     min_price:   ['price','ASC'],
     max_rating:['rating','DESC'],
-    default: ['name', 'ASC']
+    default: ['price', 'ASC']
 
 }
 
 const getProduct = async (req, res) => {
     const { name, orderby, types, pricerange } = req.query;
     const myOrderBy = (orderby)?ORDER_BY[orderby]: ORDER_BY['default']
+
     let whereName = (name)? {
         [Op.and]:[
         Sequelize.where(
@@ -23,11 +24,13 @@ const getProduct = async (req, res) => {
           ),
       ]
     }:null
+
     const wherePriceRange = (pricerange)?{ 
         price: {
             [Op.between]: pricerange.split(',')
         }
     }:{}
+
         if(whereName == null){
             whereName = {
                 [Op.and]: [
@@ -37,11 +40,17 @@ const getProduct = async (req, res) => {
         }else{
             whereName[Op.and].push(wherePriceRange)
         }
+    
+
+
+
     const whereType = (types)?{
         id:{
           [Op.in]: types.split(',')
         }
       }:{}
+
+
     try {
             const products = await Product.findAll({
                 include: [{
