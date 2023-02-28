@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const pagoRouter = require('./pagoRouter/pagoRouter');
 const productsRouter = require('./productsRouter/productsRouter');
 const reviewsRouter = require('./reviewsRouter/reviewsRouter');
 const typesRouter = require('./typeRouter/typeRouter');
@@ -10,5 +11,6 @@ router.use('/users', userReouter);
 router.use('/products', productsRouter);
 router.use('/types', typesRouter);
 router.use('/reviews', reviewsRouter);
+router.use('/checkout', pagoRouter);
 
 module.exports = router;
