@@ -4,8 +4,8 @@ require('dotenv').config()
 const { KEY_STRIPE } = process.env
 
 
-// const stripe = new Stripe('sk_test_51MUXsPIUj9w23It91QrfLJPJ5f35bB7vIzqE7jFkXpnNBitVcLcWKFZmzMs9xRaBSh7gAnydGuK0E58HGY0H82oR00nvki5Fxh');
-const stripe = new Stripe(KEY_STRIPE);
+const stripe = new Stripe('sk_test_51MgdeaLkh1uY73aUnv45N7gz9cP858XLXShW7OYyU89MqcTTmIl00gZlaL2tNMUIv6aRFJca4ceRF6eF8OwWCHfg00E48PkgU8');
+// const stripe = new Stripe(KEY_STRIPE);
 
 // const cors = require('cors');
 
