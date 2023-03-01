@@ -23,7 +23,7 @@ const Product = (sequelize) => {
             type: DataTypes.STRING
         },
         price: {
-            type: DataTypes.INTEGER, // hasta un maximo de 9999.99
+            type: DataTypes.DECIMAL(3, 2), // hasta un maximo de 9999.99
             //allowNull: false
         },
         type: {
