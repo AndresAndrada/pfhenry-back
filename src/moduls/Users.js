@@ -27,10 +27,13 @@ const Users = (sequelize) => {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
+        roles: {
+            type: DataTypes.STRING
+        },
         token: {
             type: DataTypes.STRING,
             allowNull: true
-          },
+        },
     },
     {
         timestamps: false

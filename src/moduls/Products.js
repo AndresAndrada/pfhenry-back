@@ -33,6 +33,9 @@ const Product = (sequelize) => {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
+        comment: {
+            type: DataTypes.ARRAY(DataTypes.STRING)
+        },
         rating: {
             type: DataTypes.DECIMAL(3, 2),
             defaultValue: 5.0,
