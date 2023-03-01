@@ -1,8 +1,8 @@
-const {Checkout} = require ('../controllers/Payment');
 const Router = require("express");
+const { checkout } = require("../../controllers/metodoPagoStripe/stripe");
 
 const pagoRouter = Router();
 
-pagoRouter.post("/", Checkout)
+pagoRouter.post("/", checkout);
 
 module.exports = pagoRouter;
