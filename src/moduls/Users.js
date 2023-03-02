@@ -20,9 +20,6 @@ const Users = (sequelize) => {
             type: DataTypes.STRING, //  contacto del usuario
             allowNull: false
         },
-        image: {
-            type: DataTypes.STRING
-        },
         contact: {
             // numero del profesional
             type: DataTypes.STRING,
