@@ -13,6 +13,9 @@ const Users = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        image: {
+            type: DataTypes.STRING
+        },
         email: {
             type: DataTypes.STRING, //  contacto del usuario
             allowNull: false
