@@ -13,6 +13,9 @@ const Users = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        image: {
+            type: DataTypes.STRING(600)
+        },
         email: {
             type: DataTypes.STRING, //  contacto del usuario
             allowNull: false
@@ -30,8 +33,10 @@ const Users = (sequelize) => {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
-        roles: {
-            type: DataTypes.STRING
+        admin: {
+            //Usuario Administrador
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         },
         token: {
             type: DataTypes.STRING,
