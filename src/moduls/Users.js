@@ -27,8 +27,10 @@ const Users = (sequelize) => {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
-        roles: {
-            type: DataTypes.STRING
+        admin: {
+            //Usuario Administrador
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         },
         token: {
             type: DataTypes.STRING,
