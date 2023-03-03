@@ -13,7 +13,7 @@ const Users = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        image: {
+        picture: {
             type: DataTypes.STRING(600)
         },
         email: {
