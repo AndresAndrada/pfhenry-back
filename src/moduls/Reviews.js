@@ -11,6 +11,9 @@ const Reviews = (sequelize) => {
         puntuation: {
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        coment: {
+            type: DataTypes.ARRAY(DataTypes.STRING)
         }
     },
     {
