@@ -15,7 +15,7 @@ userReouter.get('/:id', getIdUsers);
 userReouter.post('/', postUsers);
 
 // DELETE
-userReouter.delete('/:id', deleteUser)
-userReouter.delete('/admin/:id', setAdminUsers)
+userReouter.delete('/:id', deleteUser);
+userReouter.delete('/admin/:id', setAdminUsers);
 
 module.exports = userReouter;
