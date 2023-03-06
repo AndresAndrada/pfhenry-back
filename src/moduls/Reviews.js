@@ -12,8 +12,7 @@ const Reviews = (sequelize) => {
             type: DataTypes.STRING,
         },
         comment: {
-            type: DataTypes.STRING(500),
-            allowNull: false,
+            type: DataTypes.STRING,
         }
     },
     {
