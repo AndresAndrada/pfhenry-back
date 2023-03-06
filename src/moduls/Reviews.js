@@ -12,8 +12,8 @@ const Reviews = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        coment: {
-            type: DataTypes.ARRAY(DataTypes.STRING)
+        comment: {
+            type: DataTypes.STRING(500)
         }
     },
     {
