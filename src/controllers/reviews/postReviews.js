@@ -1,12 +1,12 @@
 const { Reviews } = require("../../db.js");
 
 const postReviews = async (req, res) => {
-    const { puntuation, comment } = req.body;
+    const { comment, name } = req.body;
     try {
         const repetido = await Reviews.findAll({
-            where: { comment: comment} });
+            where: { name: name} });
         if(!Comment) return res.send({ message: "data required"});
-        await Reviews.create({ puntuation, comment });
+        await Reviews.create({ name, comment });
         res.send({ message: "Review created successfully" })
     } catch (error) {
         res.send({ message: error.message });

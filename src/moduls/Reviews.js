@@ -8,12 +8,12 @@ const Reviews = (sequelize) => {
             allowNull: false,
             primaryKey: true,
         },
-        puntuation: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
+        name: {
+            type: DataTypes.STRING,
         },
         comment: {
-            type: DataTypes.STRING(500)
+            type: DataTypes.STRING(500),
+            allowNull: false,
         }
     },
     {
