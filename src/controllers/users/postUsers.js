@@ -3,14 +3,15 @@ const { newUser } = require('../email/emailCreate.js');
 
 
 const postUsers = async (req, res) => {
-    const { name, email, contact, token } = req.body;
+    const { name, picture, email,  contact, token } = req.body;
     try {
         const userFind = await Users.findAll({ where: { email: email } });
         if(!name || !email) return res.send({ message: "data required" });
-        if (userFind.length) return res.send({ message: "User already exists" });
-        await Users.create({ name, email, contact, token });
+        if (userFind.length > 0) return res.send({ admin: userFind[0].dataValues.admin, email: userFind[0].dataValues.email });
+        const user = await Users.create({ name, picture, email, contact, token });
         await newUser(name, email);
-        res.send({ message: 'User created successfully'});
+        // console.log(user, 'USUARIO');
+        res.send({ admin: user.dataValues.admin, email: user.dataValues.email });
     } catch (error) {
         res.send({ message: error.message });
     };

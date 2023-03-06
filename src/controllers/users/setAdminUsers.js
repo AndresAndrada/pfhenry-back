@@ -6,11 +6,13 @@ const setAdminUsers = async (req, res) => {
         const userAdmin = await Users.findByPk(id);
         if(userAdmin.admin === false) {
             await Users.update({ admin: true}, { where: {id: id} });
-            res.send({ message: 'User is already Admin'});
+            console.log(userAdmin.dataValues, 'MODIFIC');
+            res.send({ admin: userAdmin.dataValues.admin, email: userAdmin.dataValues.email });
         }
         if(userAdmin.admin === true) {
             await Users.update({ admin: false}, { where: {id: id} });
-            res.send({ message: 'User is Admin'});
+            console.log(userAdmin.dataValues, 'MODIFIC');
+            res.send({ admin: userAdmin.dataValues.admin, email: userAdmin.dataValues.email });
         };
     } catch (error) {
         req.send({ message: error.message });
