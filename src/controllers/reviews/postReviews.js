@@ -1,6 +1,6 @@
 const { Reviews } = require("../../db.js");
 
-const createReviews = async (req, res) => {
+const postReviews = async (req, res) => {
     const { comment, name } = req.body;
     try {
         const repetido = await Reviews.findAll({
