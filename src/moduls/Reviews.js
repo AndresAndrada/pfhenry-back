@@ -11,6 +11,9 @@ const Reviews = (sequelize) => {
         name: {
             type: DataTypes.STRING,
         },
+        productname: {
+            type: DataTypes.STRING,
+        },
         comment: {
             type: DataTypes.STRING,
         }
