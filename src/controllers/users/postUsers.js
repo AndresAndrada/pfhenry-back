@@ -6,9 +6,9 @@ const postUsers = async (req, res) => {
     const { name, picture, email,  contact, token } = req.body;
     try {
         const userFind = await Users.findAll({ where: { email: email } });
-        console.log(userFind.dataValues, 'USERFIND');
+        console.log(userFind[0].dataValues, 'USERFIND');
         if(!name || !email) return res.send({ message: "data required" });
-        if (userFind.length > 0) return res.send({ message: "User already exists" }, { admin: userFind.dataValues.admin, email: userFind.dataValues.email });
+        if (userFind.length > 0) return res.send({ admin: userFind[0].dataValues.admin, email: userFind[0].dataValues.email });
         const user = await Users.create({ name, picture, email, contact, token });
         await newUser(name, email);
         // console.log(user, 'USUARIO');
