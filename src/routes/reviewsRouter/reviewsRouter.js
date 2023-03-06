@@ -9,6 +9,6 @@ const reviewsRouter = Router();
 reviewsRouter.get('/', getReviews);
 
 // POST
-reviewsRouter.post('/', postReviews);
+reviewsRouter.post('/', createReviews);
  
 module.exports = reviewsRouter;
