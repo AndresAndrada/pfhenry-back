@@ -5,7 +5,7 @@ const postReviews = async (req, res) => {
     try {
         const repetido = await Reviews.findAll({
             where: { name: name} });
-        if(!Comment) return res.send({ message: "data required"});
+        if(!name) return res.send({ message: "data required"});
         await Reviews.create({ name, comment });
         res.send({ message: "Review created successfully" })
     } catch (error) {
