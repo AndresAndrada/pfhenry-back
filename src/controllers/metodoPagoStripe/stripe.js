@@ -27,6 +27,7 @@ const checkout= async (req, res) => {
       confirm: true,
       });
       await Product.findAll({ quantity: quantity-1 }, { where: { id: id }});
+      
     // console.log(payment);
       return res.send({ message: "Successful Payment" });
     } catch (error) {
