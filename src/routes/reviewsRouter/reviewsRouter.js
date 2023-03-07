@@ -1,11 +1,12 @@
 const Router = require('express');
-const { postReviews } = require('../../controllers/reviews/reviews');
-const { reviewsVerified } = require('../../controllers/reviews/reviewsVerified');
+const { postReviews } = require('../../controllers/reviews/postReviews');
+const { getReviews } = require('../../controllers/reviews/getReviews');
+// const { reviewsVerified } = require('../../controllers/reviews/reviewsVerified');
 
 const reviewsRouter = Router();
 
 // GET
-reviewsRouter.get('/:ProductId/:UserId', reviewsVerified);
+reviewsRouter.get('/', getReviews);
 
 // POST
 reviewsRouter.post('/', postReviews);
