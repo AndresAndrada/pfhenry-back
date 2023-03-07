@@ -1,7 +1,7 @@
 const express = require('express');
 const { where } = require('sequelize');
 const Stripe = require('stripe');
-const { Product } = require('../../db.js');
+// const { Product } = require('../../db.js');
 require('dotenv').config()
 const { KEY_STRIPE } = process.env
 
@@ -26,7 +26,8 @@ const checkout= async (req, res) => {
       payment_method: id,
       confirm: true,
       });
-      await Product.findAll({ quantity: quantity-1 }, { where: { id: id }});
+      // await Product.findAll({ quantity: quantity-1 }, { where: { id: id }});
+      
     // console.log(payment);
       return res.send({ message: "Successful Payment" });
     } catch (error) {
