@@ -1,4 +1,6 @@
 const Router = require('express');
+const { sacarCarrito } = require('../../controllers/products/sacarCarrito');
+
 const { agregarCarrito } = require('../../controllers/products/agregarCarrito');
 const { deleteProduct } = require('../../controllers/products/deleteProduct');
 const { getIdProduct } = require('../../controllers/products/getIdProduct');
@@ -16,7 +18,8 @@ productsRouter.post('/', postProducts);
 
 // DELETE
 productsRouter.delete('/:id', deleteProduct);
-productsRouter.delete('/carrito/:id', agregarCarrito);
+productsRouter.delete('/carrito/:id', sacarCarrito); // saca
+productsRouter.get('/carrito/:id', agregarCarrito); // agrega
 
 
 module.exports = productsRouter;
