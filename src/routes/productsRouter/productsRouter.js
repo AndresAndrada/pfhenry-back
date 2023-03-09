@@ -18,7 +18,7 @@ productsRouter.get('/:id', getIdProduct);
 productsRouter.post('/', postProducts);
 
 // Patch
-productsRouter.patch('/carrito', vaciarCarrito);
+productsRouter.post('/carrito', vaciarCarrito);
 
 // DELETE
 productsRouter.delete('/:id', deleteProduct);

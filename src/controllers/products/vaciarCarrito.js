@@ -2,10 +2,10 @@ const { Product } = require("../../db.js");
 
 const vaciarCarrito = async (req, res) => {
     const { carrito } = req.body;
-    // console.log(carrito, 'VACIAR CARRITO');
+    console.log(carrito, 'VACIAR CARRITO');
     try{
         carrito.map(async p => {
-            await Product.update({ carrito: false }, { where: { id: p } });
+            await Product.update({ carrito: false }, { where: { id: p.id } });
         })
         const prod = await Product.findAll();
         res.send(prod);
