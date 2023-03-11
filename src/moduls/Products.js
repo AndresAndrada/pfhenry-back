@@ -20,7 +20,7 @@ const Product = (sequelize) => {
             type: DataTypes.TEXT
         },
         image: {
-            type: DataTypes.STRING
+            type: DataTypes.TEXT
         },
         price: {
             type: DataTypes.INTEGER, // hasta un maximo de 9999.99
