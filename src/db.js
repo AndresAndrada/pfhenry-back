@@ -5,7 +5,7 @@ const Reviews = require('./moduls/Reviews.js');
 const Types = require('./moduls/Types.js');
 const Users = require('./moduls/Users.js');
 
-const { USER_DB, PASSWORD_DB, HOST_DB, NAME_DB, DB_DEPLOY} = process.env;
+const { USER_DB, PASSWORD_DB, HOST_DB, NAME_DB, DB_DEPLOY } = process.env;
 
 // const sequelize = new Sequelize(`postgres://${USER_DB}:${PASSWORD_DB}@${HOST_DB}/${NAME_DB}`, {
 //     dialect: 'postgres',
@@ -14,9 +14,14 @@ const { USER_DB, PASSWORD_DB, HOST_DB, NAME_DB, DB_DEPLOY} = process.env;
 // });
 
 const sequelize = new Sequelize(DB_DEPLOY, {
-    dialect: 'postgres',
+    // dialect: 'postgres',
     logging: false,
-    native: false
+    native: false,
+    dialectOptions: {
+        ssl: {
+            require: true
+        },
+    },
 });
 
 // const { Users } = sequelize.models;
